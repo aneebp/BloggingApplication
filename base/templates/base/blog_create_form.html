@@ -1,0 +1,17 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="blogeform-container">
+    <form action="">
+      <div class="bloggewrite">
+         <input type="text" placeholder="Write Your Blogge Title">
+        <textarea placeholder="Write What's In Your Mind" id="" cols="30" rows="10"></textarea>
+      </div>
+        <div class="buttons">
+          <a type="" href="{% url 'home' %}"><button>BACK</button></a>
+         
+          <a><button> <input type="submit" value="POST"></button></a>   
+        </div>
+        
+    </form>
+</div>
+{% endblock content %}
