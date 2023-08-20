@@ -6,5 +6,8 @@
         <p>write your thoughts,discover stories,passions,and expertise from writers on any topic</p>
         <a href="{% url 'createblogge' %}"><button>Start Writing</button></a>  
     </div>
+    <div class="feed-component">
+        {% include 'base/blogge_feed.html' %}
+    </div>
 </section>
 {% endblock content  %}

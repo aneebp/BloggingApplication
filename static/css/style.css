@@ -273,3 +273,58 @@ button input[value="POST"]{
     font-size: 1.2rem;
     font-weight: 600;
 }
+
+/* ===========feed section==================== */
+.feed-component{
+    display: grid;
+    row-gap: 1rem;
+    margin-top: 10rem;
+}
+.box{
+    height: auto;
+    width: 80%;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgb(89 53 255 / 14%);
+    text-align: start;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    
+}
+.box .header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.8rem;
+}
+.header .time p{
+    color: gray;
+}
+.header .user{
+    display: flex;
+    gap: 0.3rem;
+
+}
+
+.box .profile{
+    width: 30px;
+    height: 30px;
+}
+.profile img{
+    width: 100%;
+}
+
+.box .body{
+    padding: 0 1.8rem;
+}
+.body h1{
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+}
+.body p{
+    margin-bottom: 2rem;
+}
+
+
+
