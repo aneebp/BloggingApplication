@@ -18,3 +18,11 @@ def Signup(request):
 def Createblogge(request):
     context = {}
     return render(request,'base/blog_create_form.html',context)
+
+def Profile(request):
+    context ={}
+    return render(request,'base/user_profile.html',context)
+
+def ProfileEdit(request):
+    context ={}
+    return render(request,'base/profile_edit.html',context)

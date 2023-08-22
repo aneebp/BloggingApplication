@@ -1,0 +1,23 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+{% load static %}
+<div class="profile_container">
+    <div class="profile_page">
+      <a href="{% url 'home' %}"><span class="material-symbols-outlined">
+            arrow_back
+            </span></a>  
+        <div class="profile">
+            <img src="{% static 'images/avatar.svg' %}" alt="">
+        </div>
+        <p>ANEeeb</p>
+        <p>@aneebanu</p>
+       
+        <p class="bio">
+            Our online curOur online currency converter is showing you the value of 5000 US Dollar in Indian Rupees according to the current foreign exchange rate of INR 414250. Today i.e. Monday 14/08/2023 , for 5000 US Dollar you get 414250 Indian Rupees.rency converter is showing you the value of 5
+        </p>
+        <a href="{% url 'profile_edit' %}"><button>Edit Profile</button></a>
+    </div>
+</div>
+
+{% endblock content %}

@@ -265,11 +265,10 @@ a {
     border: 1px white solid;
     font-weight: 600;
     justify-content: start;
-    pointer-events: none;
     
     
 }
-button input[value="POST"]{
+.blogeform-container .buttons button input[value="POST"]{
     font-size: 1.2rem;
     font-weight: 600;
 }
@@ -289,7 +288,11 @@ button input[value="POST"]{
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3rem;
+    transition: all .4s ease;
     
+}
+.box:hover{
+    box-shadow: 0px 11px 10px 10px rgb(89 53 255 / 14%);
 }
 .box .header{
     display: flex;
@@ -325,6 +328,120 @@ button input[value="POST"]{
 .body p{
     margin-bottom: 2rem;
 }
+.nav-container .userprofile{
+    display: flex;
+    gap: 0.3rem;
+}
+.userprofile .usernames{
+    display: grid;
+    grid-row: 1rem;
+}
+.usernames p:last-child{
+    padding-bottom: 2rem;
+}
+.usernames p:first-child{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.userprofile .profile{
+    width: 50px;
+    height: 50px;
+    margin-top: 0.2rem;
+}
+
+/* ==============user profile================= */
+
+.profile_container .profile_page{
+    height: auto;
+    width: 800px;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgb(89 53 255 / 14%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rem;
+    text-align: center;
+    padding: 5rem;
+    position: relative;
+
+}
+.material-symbols-outlined{
+    position: absolute;
+    top: 32px;
+    left: 34px;
+}
+.profile_page .profile{
+    width: 80px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.profile_page .bio{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-align: start;
+
+}
+.profile_page button{
+    font-size: 1rem;
+    border: gray;
+    position: absolute;
+    bottom: 0;
+    right: 345px;
+    text-decoration: underline;
+    cursor: pointer;
 
 
+ 
+}
 
+/* ===========profile edti================= */
+.edit_profile_contaienr .edit_profile{
+    height: auto;
+    width: 800px;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgb(89 53 255 / 14%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    text-align: center;
+    padding: 3rem;
+    position: relative;
+
+}
+.edit_profile form{
+    display: grid;
+    row-gap: 3rem;
+}
+ form input{
+    background-color: transparent;
+    padding: 1rem 0;
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding-left: 1rem;
+}
+ form input:last-child{
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+.edit_profile form textarea{
+    resize: none;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding: 1rem;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    margin-left: 2rem;
+}
+.buttons .butt{
+    background-color: transparent;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: 1px solid gray;
+
+}

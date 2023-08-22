@@ -3,10 +3,10 @@
     <div class="nav-container">
         <div class="nav-logo">
             <div class="logo">
-                <a href="/"><img src="{% static './images/logo1.png' %}" alt=""></a>
+                <a href="{% url 'home' %}"><img src="{% static './images/logo1.png' %}" alt=""></a>
             </div>
             <div class="brand">
-                <a href="/"><img src="{% static 'images/an.png' %}" alt=""></a>
+                <a href="{% url 'home' %}"><img src="{% static 'images/an.png' %}" alt=""></a>
             </div>
         </div>
         <div class="nav-buttons">
@@ -17,6 +17,18 @@
                 <a href="{% url 'signup' %}"><button>Get Started</button></a>
             </div>
 
-        </div>
+        </div>  
+        {% comment %} <a href="{% url 'profile' %}">
+        <div class="userprofile">
+                <div class="profile">
+                    <img src="{% static 'images/avatar.svg' %}" alt="">
+                </div>
+                <div class="usernames">
+                <p>ANeeb</p>
+                <p>@aneebanu</p>
+                </div>
+                
+        </div> 
+    </a> {% endcomment %}
     </div>
 </header>

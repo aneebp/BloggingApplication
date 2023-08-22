@@ -1,0 +1,21 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="edit_profile_contaienr">
+    <div class="edit_profile">
+        <form action="">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Username">
+            <input type="Email" placeholder="Email">
+            <textarea name="" cols="30" rows="10" placeholder="Bio"></textarea>
+            <div class="buttons">
+                <a href="{% url 'profile' %}">
+                <div class="butt">BACK</div>
+                </a>
+                <input type="submit" value="SUBMIT">
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
