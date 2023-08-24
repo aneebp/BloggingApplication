@@ -11,11 +11,19 @@
     <title>BloggingSite</title>
   </head>
   <body>
+    {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
     {% include 'base/nav_bar.html' %}
     {% block content %}
 
     {% endblock content %}
-    
+
+    <script href="{% static './JS/javascript.js' %}"></script>
     
 </body>
 </html>     

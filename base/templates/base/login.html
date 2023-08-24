@@ -3,24 +3,27 @@
 {% if page == 'login' %}
 <div class="main_login">
     <p class="sign" align="center">login</p>
-    <form class="form1">
-      <input class="un " type="text" align="center" placeholder="Username">
-      <input class="pass" type="password" align="center" placeholder="Password">
-      <a href="#" class="submit" align="center">Login</a>
+    <form class="form1" method='POST'>
+      {% csrf_token %}
+      <input class="un " name="username" type="text" align="center" placeholder="Username">
+      <input class="pass" name="password" type="password" align="center" placeholder="Password">
+      <input type="submit" value="Login" class="submit" align="center">
       <p class="acc" align="center">Don't have an account?</p>
       <p class="sinn" align="center"><a href="{% url 'signup' %}">Sign Up</a></p>         
-    </div>
+    </form>
+  </div>    
 {% else %}
 <div class="main">
     <p class="sign" align="center">Sign Up</p>
     <form class="form1">
-        <input class="un " type="text" align="center" placeholder="Name">
-        <input class="un " type="text" align="center" placeholder="Username">
+      <input class="un " type="text" align="center" placeholder="Name">
+      <input class="un " type="text" align="center" placeholder="Username">
       <input class="un " type="Email" align="center" placeholder="Email">
       <input class="pass" type="password" align="center" placeholder="Password">
       <a href="#" class="submit" align="center">Sign Up</a>
       <p class="acc" align="center">Already have an account?</p>
       <p class="sinn" align="center"><a href="{% url 'login' %}">Login</a></p>         
-    </div>
+    </form>
+  </div>
 {% endif %}
 {% endblock content %}
