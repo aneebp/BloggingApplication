@@ -3,17 +3,17 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate ,login,logout
 from .models import User,Blogge,Comment
 from django.contrib import messages
+from .form import SignUpCreation
 
 # Create your views here.
 
 def Home(request):
-    context = {}
+    user= User.objects.all()
+    context = {'user':user}
     return render(request,'base/home.html',context)
 
 def Login(request):
     page = 'login'
-    # if request.user.is_authenticated:
-    #     return redirect('home')
     if request.method == 'POST':
         username = request.POST.get("username").lower()
         password = request.POST.get("password")
@@ -32,15 +32,30 @@ def Login(request):
     return render(request,'base/login.html',context)
 
 def Signup(request):
-    context = {}
+    form = SignUpCreation()
+    if request.method == "POST":
+        form =SignUpCreation(request.POST)
+        if form.is_valid():
+            user =form.save(commit=False)
+            user.username = request.POST.get("username").lower()
+            user.save()
+            login(request,user)
+            return redirect('home')
+        else:
+            messages.error(request, "An error occured during registration")
+    context = {'form':form}
     return render(request,'base/login.html',context)
+
+def Logout(request):
+    logout(request)
+    return redirect('home')
 
 def Createblogge(request):
     context = {}
     return render(request,'base/blog_create_form.html',context)
 
 def Profile(request):
-    context ={}
+    context ={'user':User}
     return render(request,'base/user_profile.html',context)
 
 def ProfileEdit(request):

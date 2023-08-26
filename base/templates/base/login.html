@@ -15,12 +15,26 @@
 {% else %}
 <div class="main">
     <p class="sign" align="center">Sign Up</p>
-    <form class="form1">
-      <input class="un " type="text" align="center" placeholder="Name">
-      <input class="un " type="text" align="center" placeholder="Username">
-      <input class="un " type="Email" align="center" placeholder="Email">
-      <input class="pass" type="password" align="center" placeholder="Password">
-      <a href="#" class="submit" align="center">Sign Up</a>
+    <form class="form1" method="POST">
+      {% csrf_token %}
+      {% for field in form  %}
+      <div class="form_container">
+        <div class="formsingle">
+            {% if field.name == 'name' %}
+                <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" placeholder="Name">
+            {% elif field.name == 'username' %}
+                <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" placeholder="Username">    
+            {% elif field.name == 'email' %}
+                <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" placeholder="Email">
+            {% elif field.name == 'password1' %}
+                <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" placeholder="Password">
+            {% elif field.name == 'password2' %}
+                <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" placeholder="Confirm Password">
+            {% endif %}
+        </div>
+    </div>
+      {% endfor %}
+      <input type="submit" value="Sign Up" class="submit" align="center">
       <p class="acc" align="center">Already have an account?</p>
       <p class="sinn" align="center"><a href="{% url 'login' %}">Login</a></p>         
     </form>

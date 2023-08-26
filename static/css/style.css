@@ -137,7 +137,7 @@ form.form1 {
 }
 
 .pass {
-        width: 76%;
+width: 76%;
 font-weight: 700;
 font-size: 14px;
 letter-spacing: 1px;
@@ -197,6 +197,24 @@ a {
     color: #E1BEE7;
     text-decoration: none
 }
+.form_container input{
+    width: 76%;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+}  
 
 /* =============create blogge form========== */
 
@@ -383,17 +401,13 @@ a {
 
 }
 .profile_page button{
-    font-size: 1rem;
-    border: gray;
-    position: absolute;
-    bottom: 0;
-    right: 345px;
+    border: none;
+    padding: 0 3rem;
     text-decoration: underline;
-    cursor: pointer;
-
-
+    
  
 }
+
 
 /* ===========profile edti================= */
 .edit_profile_contaienr .edit_profile{
@@ -445,3 +459,9 @@ a {
     border: 1px solid gray;
 
 }
+
+  
+
+
+
+
