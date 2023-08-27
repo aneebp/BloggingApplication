@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate ,login,logout
 from .models import User,Blogge,Comment
 from django.contrib import messages
-from .form import SignUpCreation
+from .form import SignUpCreation,Updateuser
 
 # Create your views here.
 
@@ -55,9 +55,16 @@ def Createblogge(request):
     return render(request,'base/blog_create_form.html',context)
 
 def Profile(request):
-    context ={'user':User}
+    context ={}
     return render(request,'base/user_profile.html',context)
 
 def ProfileEdit(request):
-    context ={}
-    return render(request,'base/profile_edit.html',context)
+    user = request.user
+    form = Updateuser(instance=user)
+    if request.method == "POST":
+        form = Updateuser(request.POST,request.FILES,instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    context ={'form':form}
+    return render(request,'base/profile_edit.html',context) 
