@@ -1,18 +1,26 @@
 {% extends 'base/main.html' %}
 {% block content %}
 <div class="blogeform-container">
-    <form action="">
+  <div class="blogeform">
+    <form action="" method="POST">
+      {% csrf_token %}
+      {% for field in form  %}
       <div class="bloggewrite">
-         <input type="text" placeholder="Write Your Blogge Title">
-        <textarea placeholder="Write What's In Your Mind" id="" cols="30" rows="10"></textarea>
-      </div>
+        {% if field.name == 'title' %}
+            <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" placeholder="Write Your Blogge Title">
+        {% elif field.name == 'description' %}
+            <textarea name="{{ field.name }}" placeholder="Write What's In Your Mind"></textarea>
+        {% endif %}
+    </div>
+      {% endfor %}
       <div class="buttons">
         <a href="{% url 'home' %}">
         <div class="butt">BACK</div>
         </a>
-        <input type="submit" value="SUBMIT">
+        <input type="submit" value="POST">
     </div>
         
     </form>
+  </div>
 </div>
 {% endblock content %}

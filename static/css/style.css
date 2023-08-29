@@ -220,13 +220,16 @@ a {
 
 .blogeform-container{
     height: 700px;
-    width: 600px;
+    width: 700px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgb(89 53 255 / 14%);
     margin-top: 5rem;
 
+}
+.blogeform-container .blogeform{
+    padding: 1rem 2rem;
 }
 .blogeform-container form{
     display: grid;
@@ -271,23 +274,13 @@ a {
 .blogeform-container .buttons{
     display: flex;
     margin-top: 2rem;
-    gap: 2rem;
-    margin-left: 10rem;
+    padding: 0rem 2rem;
     cursor: pointer;
-}
-.blogeform-container .buttons button{
-    padding: 0.7rem 1.6rem;
-    border-radius: 8px;
-    background: transparent;
-    color: white;
-    border: 1px white solid;
+    font-size: 1rem;
     font-weight: 600;
-    justify-content: start;
-    
-    
 }
-.blogeform-container .buttons button input[value="POST"]{
-    font-size: 1.2rem;
+.blogeform-container .buttons  input[value="POST"]{
+    font-size: 1rem;
     font-weight: 600;
 }
 

@@ -3,13 +3,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate ,login,logout
 from .models import User,Blogge,Comment
 from django.contrib import messages
-from .form import SignUpCreation,Updateuser
+from .form import SignUpCreation,Updateuser,Bloggeform
 
 # Create your views here.
 
 def Home(request):
     user= User.objects.all()
-    context = {'user':user}
+    feeds = Blogge.objects.all()
+    context = {'user':user,'feeds':feeds}
     return render(request,'base/home.html',context)
 
 def Login(request):
@@ -51,7 +52,17 @@ def Logout(request):
     return redirect('home')
 
 def Createblogge(request):
-    context = {}
+    form = Bloggeform()
+    if request.method == "POST":
+        form = Bloggeform(request.POST)
+        if form.is_valid():
+            feed = form.save(commit=False)
+            feed.user = request.user
+            feed.save()
+            return redirect('home')
+        else:
+            messages.error(request, 'An error occured during writting blogge')
+    context = {'form':form}
     return render(request,'base/blog_create_form.html',context)
 
 def Profile(request):

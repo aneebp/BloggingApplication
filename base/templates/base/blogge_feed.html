@@ -1,5 +1,5 @@
 {% load static %}
-
+    {% for feed in feeds  %}
     <div class="box">
         <div class="header">
             <a href="">
@@ -7,40 +7,19 @@
                 <div class="profile">
                     <img src="{% static 'images/avatar.svg' %}" alt="">
                 </div>
-                <p>@aneebanu</p>
+                <p>{{feed.user}}</p>
             </div>
         </a>
         <div class="time">
-            <p>2 min ago</p>
+            <p>{{feed.created | timesince}} ago</p>
         </div>
         </div>
         <div class="body">
-            <h1>55+ Most Popular Blog Examples You Need to Check Out for Inspiration</h1>
-            <p>Furthermore, a professional blogger can even make money from blogging in various ways, such as Google ads and Amazon affiliate links. Successful blogs can cover any topic. No matter what subject you can think of, there’s likely already a profitable blog dedicated to it.
-
-                If there is none, this is where you come in. New bloggers who can find a unique niche to create content about have a higher chance of surviving in the competitive blogging world. Preferably, you should be passionate about or an expert in your blog niche. However, don’t worry if you are having a difficult time pinning down a topic – this article will help you.</p>
+            <h1>{{feed.title}}</h1>
+            <p>{{feed.description}}</p>
         </div>
     </div>
-    <div class="box">
-        <div class="header">
-            <a href="">
-            <div class="user">
-                <div class="profile">
-                    <img src="{% static 'images/avatar.svg' %}" alt="">
-                </div>
-                <p>@aneebanu</p>
-            </div>
-        </a>
-        <div class="time">
-            <p>2 min ago</p>
-        </div>
-        </div>
-        <div class="body">
-            <h1>55+ Most Popular Blog Examples You Need to Check Out for Inspiration</h1>
-            <p>Furthermore, a professional blogger can even make money from blogging in various ways, such as Google ads and Amazon affiliate links. Successful blogs can cover any topic. No matter what subject you can think of, there’s likely already a profitable blog dedicated to it.
-
-                If there is none, this is where you come in. New bloggers who can find a unique niche to create content about have a higher chance of surviving in the competitive blogging world. Preferably, you should be passionate about or an expert in your blog niche. However, don’t worry if you are having a difficult time pinning down a topic – this article will help you.</p>
-        </div>
-    </div>
+    {% endfor %}
+    
 
 
