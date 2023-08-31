@@ -51,13 +51,15 @@ def Logout(request):
     logout(request)
     return redirect('home')
 
+
+@login_required(login_url='login')
 def Createblogge(request):
     form = Bloggeform()
     if request.method == "POST":
         form = Bloggeform(request.POST)
         if form.is_valid():
             feed = form.save(commit=False)
-            feed.user = request.user
+            feed.host = request.user
             feed.save()
             return redirect('home')
         else:
@@ -65,10 +67,14 @@ def Createblogge(request):
     context = {'form':form}
     return render(request,'base/blog_create_form.html',context)
 
-def Profile(request):
-    context ={}
+
+def Profile(request,pk):
+    user = User.objects.get(id=pk)
+    context ={'user':user}
     return render(request,'base/user_profile.html',context)
 
+
+@login_required(login_url='login')
 def ProfileEdit(request):
     user = request.user
     form = Updateuser(instance=user)
@@ -76,6 +82,6 @@ def ProfileEdit(request):
         form = Updateuser(request.POST,request.FILES,instance=user)
         if form.is_valid():
             form.save()
-            return redirect('profile')
+            return redirect('profile',pk=user.id)
     context ={'form':form}
     return render(request,'base/profile_edit.html',context) 

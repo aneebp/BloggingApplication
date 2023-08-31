@@ -10,14 +10,15 @@
         <div class="profile">
             <img src="{% static 'images/avatar.svg' %}" alt="">
         </div>
-        <p>{{request.user.name}}</p>
-        <p>{{request.user.username}}</p>
-       
+        <p>{{user.name}}</p>
+        <p>{{user.username}}</p>
         <p class="bio">
-            {{request.user.bio}}
+            {{user.bio}}
             </p>
+        {% if request.user.username == user.username %}
         <a href="{% url 'profile_edit' %}"><button>Edit Profile</button></a>
         <a href="{% url 'logout' %}"><button>Logout</button></a>
+        {% endif %}
        
        
 

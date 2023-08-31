@@ -10,7 +10,7 @@
             </div>
         </div>
         {% if request.user.is_authenticated %}
-        <a href="{% url 'profile' %}">
+        <a href="{% url 'profile' request.user.id %}">
             <div class="userprofile">
                     <div class="profile">
                         <img src="{% static 'images/avatar.svg' %}" alt="">

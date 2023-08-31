@@ -11,11 +11,12 @@
             </div>
             {% endfor %}
             <div class="buttons">
-                <a href="{% url 'profile' %}">
+                <a href="{% url 'profile' request.user.id %}">
                 <div class="butt">BACK</div>
                 </a>
                 <input type="submit" value="SUBMIT">
             </div>
+            
             
         </form>
     </div>

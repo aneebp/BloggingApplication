@@ -6,12 +6,12 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     name = models.CharField(max_length=200,null=True)
     email = models.EmailField(null=True)
-    bio = models.TextField()
+    bio = models.TextField(null=False)
     avatar = models.ImageField(null=True,default='avatar.svg')
 
 
 class Blogge(models.Model):
-    user = models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
+    host = models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
     title = models.CharField(max_length=300,null=True)
     description = models.TextField(null=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -25,7 +25,7 @@ class Blogge(models.Model):
 
 
 class Comment(models.Model):
-    user = models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
+    host = models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
     blogge = models.ForeignKey(Blogge,on_delete=models.CASCADE)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)  
