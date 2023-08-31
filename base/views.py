@@ -67,6 +67,25 @@ def Createblogge(request):
     context = {'form':form}
     return render(request,'base/blog_create_form.html',context)
 
+@login_required(login_url='login')
+def Updateblogge(request,pk):
+    page = 'update'
+    blogge = Blogge.objects.get(id=pk)
+    form = Bloggeform(instance=blogge)
+    if request.method == "POST":
+        form = Bloggeform(request.POST,instance=blogge)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    context ={'form':form,'page':page}
+    return render(request,'base/blog_create_form.html',context)
+
+
+def Deleteblogge(request,pk):
+    obj = Blogge.objects.get(id=pk)
+    obj.delete()
+    return redirect('home')
+
 
 def Profile(request,pk):
     user = User.objects.get(id=pk)

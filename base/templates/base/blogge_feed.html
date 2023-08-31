@@ -11,6 +11,14 @@
             </div>
         </a>
         <div class="time">
+            {% if request.user.name == feed.host.name %}
+           <a href="{% url 'updateblogge' feed.id %}"><span class="material-symbols-outlined">
+                edit
+                </span></a> 
+            <a href="{% url 'deleteblogge' feed.id %}"><span class="material-symbols-outlined">
+                    delete
+                </span></a>
+                {% endif %}    
             <p>{{feed.created | timesince}} ago</p>
         </div>
         </div>

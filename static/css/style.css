@@ -310,6 +310,13 @@ a {
     justify-content: space-between;
     padding: 1.8rem;
 }
+.header .time .material-symbols-outlined {
+  color: gray;
+}
+.header .time{
+    display: flex;
+    gap: 2rem;
+}
 .header .time p{
     color: gray;
 }
@@ -375,7 +382,7 @@ a {
     position: relative;
 
 }
-.material-symbols-outlined{
+.profile_container .profile_page .material-symbols-outlined{
     position: absolute;
     top: 32px;
     left: 34px;
