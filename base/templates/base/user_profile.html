@@ -8,7 +8,7 @@
             arrow_back
             </span></a>  
         <div class="profile">
-            <img src="{% static 'images/avatar.svg' %}" alt="">
+            <img src="{{user.avatar.url}}" alt="" />
         </div>
         <p>{{user.name}}</p>
         <p>{{user.username}}</p>

@@ -21,6 +21,11 @@ button{
     font-weight: 600;
     transition: all .3s ease;
 }
+img{
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+}
 button:hover{
     transform: scale(1.1);
 }
@@ -37,9 +42,12 @@ header .nav-container{
 }
 .nav-logo .logo{
     width: 60px;
+    height: 60px;
 }
 .logo img{
     width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 .nav-logo .brand{
     width: 150px;
@@ -270,6 +278,7 @@ a {
     margin-left: 46px;
     margin-bottom: 27px;
     font-family: 'Ubuntu', sans-serif;
+    white-space: pre-wrap;
 }
 .blogeform-container .buttons{
     display: flex;
@@ -388,12 +397,16 @@ a {
     left: 34px;
 }
 .profile_page .profile{
+    display: block;
     width: 80px;
     height: 80px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1rem;
 
 }
+
+
 .profile_page .bio{
     margin-top: 5rem;
     margin-bottom: 5rem;
@@ -450,6 +463,7 @@ a {
     border-radius: 10px;
     border: 1px solid gray;
     padding: 1rem;
+    white-space: pre-wrap;
 }
 .buttons {
     display: flex;

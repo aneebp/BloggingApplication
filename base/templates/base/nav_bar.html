@@ -13,7 +13,7 @@
         <a href="{% url 'profile' request.user.id %}">
             <div class="userprofile">
                     <div class="profile">
-                        <img src="{% static 'images/avatar.svg' %}" alt="">
+                        <img src="{{request.user.avatar.url}}" alt="">
                     </div>
                     <div class="usernames">
                     <p>{{request.user.name}}</p>

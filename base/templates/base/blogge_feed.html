@@ -5,7 +5,7 @@
             <a href="{% url 'profile' feed.host.id %}">
             <div class="user">
                 <div class="profile">
-                    <img src="{% static 'images/avatar.svg' %}" alt="">
+                    <img src="{{feed.host.avatar.url}}" alt="">
                 </div>
                 <p>{{feed.host.name}}</p>
             </div>
