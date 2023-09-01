@@ -23,8 +23,11 @@ button{
 }
 img{
     width: 100%;
-    border-radius: 50%;
     height: 100%;
+    display: block;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
 }
 button:hover{
     transform: scale(1.1);
@@ -60,39 +63,31 @@ header .nav-container{
     display: flex;
     gap: 3rem;
 }
-/* .nav-buttons .log{
-
-}    */
-
-/* .nav-buttons .register{
-    
-} */
 
 
 /* =============Home main===================== */
 
-section .home-container{
-    display: grid;
-    text-align: center;
-    margin-top: 10rem;
+.home-container .home{
+    margin: 10rem;
+    text-align: start; 
+    margin-left: 30%;                                                                                                            
+   
 }
-.home-container h1{
+.home-container .home h1{
     font-size: 8rem;
     font-weight: bolder;
     letter-spacing: 0.1rem;
     font-family: 'Teko', sans-serif;
 }
-.home-container p{
+.home-container .home p{
     font-size: 1.4rem;
     font-weight: 400;
     margin-bottom: 1rem;
     letter-spacing: 0.1rem;
-    text-align: start;
-    margin-left: 32rem;
     max-width: 50rem;
+    text-align: start;
 }
-.home-container button{
-    margin-right: 47rem;
+.home-container .home button{
     margin-top: 2rem;
 
 }
@@ -357,7 +352,7 @@ a {
 }
 .nav-container .userprofile{
     display: flex;
-    gap: 0.3rem;
+    gap: 0.7rem;
 }
 .userprofile .usernames{
     display: grid;
@@ -397,9 +392,10 @@ a {
     left: 34px;
 }
 .profile_page .profile{
-    display: block;
     width: 80px;
     height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
@@ -479,7 +475,136 @@ a {
 
 }
 
+@media only screen and (max-width: 1600px){
+    .home-container .home h1{
+        font-size: 7rem;
+        font-weight: 900;
+    }
+    .home-container .home p{
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
+    .home-container .home button{
+        margin-top: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1420px){
+    .home-container .home{
+        margin-left: 20%;                                                                                                            
+       
+    }
+    .home-container .home h1{
+        font-size: 5rem;
+        font-weight: 700;
+    }
+    .home-container .home p{
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    .home-container .home button{
+        margin-top: 1rem;
+    }
+}
+@media only screen and (max-width: 960px){
+    .home-container .home{
+        margin: 5rem;
+        text-align: start; 
+        margin-left: 15%;                                                                                                            
+       
+    }
+    .home-container .home h1{
+        font-size: 5rem;
+        font-weight: 700;
+    }
+    .home-container .home p{
+        font-size: 0.9rem;
+        font-weight: 400;
+        max-width: 30rem;
+    }
+    .home-container .home button{
+        margin-top: 0.3rem;
+    }
+    .body h1{
+        font-size: 1.5rem;
+        font-weight: bolder;
+        margin-bottom: 1rem;
+        text-decoration: underline;
+    }
+   
+   
+}
+@media only screen and (max-width: 810px){
+    .home-container .home{
+        margin: 5rem 0rem;
+        text-align: start; 
+        margin-left: 8%;                                                                                                            
+       
+    }
+    .home-container .home h1{
+        font-size: 4.8rem;
+        font-weight: 600;
+    }
+    .home-container .home p{
+        font-size: 0.9rem;
+        font-weight: 400;
+        max-width: 33rem;
+    }
+    .home-container .home button{
+        margin-top: 0.1rem;
+    }
+    .body h1{
+        font-size: 1.5rem;
+        font-weight: bolder;
+        margin-bottom: 1rem;
+        text-decoration: underline;
+    }
+    .feed-component{
+        margin-top: 5rem;
+    }
+    .box{
+        width: 90%;
+        text-align: start;
+        margin-left: 5%;
+        
+    }
+    .nav-logo .brand{
+        display: none;
+         
+    }
+    .blogeform-container{
+        width: 600px;
+    }
+    .profile_container .profile_page{
+        width: 700px;
+    }
+    .edit_profile_contaienr .edit_profile{
+        width: 600px;
+    }
   
+}
+@media only screen and (max-width: 690px){
+    .userprofile .usernames{
+        display: none;
+    }
+    .blogeform-container{
+        width: 500px;
+    }
+    .profile_container .profile_page{
+        width: 600px;
+    }
+    .edit_profile_contaienr .edit_profile{
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 590px){
+    .home-container .home h1{
+        font-size: 4.2rem;
+        font-weight: 600;
+    }
+
+}
 
 
 

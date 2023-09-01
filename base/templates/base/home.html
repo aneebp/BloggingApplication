@@ -2,9 +2,12 @@
 {% block content %}
 <section>
     <div class="home-container">
+        <div class="home">
         <h1>Welcome To Antio</h1>
         <p>write your thoughts,discover stories,passions,and expertise from writers on any topic</p>
         <a href="{% url 'createblogge' %}"><button>Start Writing</button></a>  
+        </div>
+        
     </div>
     <div class="feed-component">
         {% include 'base/blogge_feed.html' %}
